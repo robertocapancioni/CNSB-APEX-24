@@ -1,19 +1,19 @@
-create or replace package d08_vld
+create or replace package d07_vld
 is
  
     procedure tipo_documento (
-        p_rec              d08_tipo_documento%rowtype
+        p_rec              d07_tipo_documento%rowtype
     );
 
-end d08_vld;
+end d07_vld;
 /
 
 
-create or replace package  body d08_vld 
+create or replace package  body d07_vld 
 is 
   
     procedure tipo_documento ( 
-        p_rec              d08_tipo_documento%rowtype 
+        p_rec              d07_tipo_documento%rowtype 
     ) 
     is 
     begin 
@@ -22,6 +22,6 @@ is
         end if; 
     end tipo_documento; 
  
-end d08_vld; 
+end d07_vld; 
 
 /
