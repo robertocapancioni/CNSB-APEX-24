@@ -1,4 +1,4 @@
-create or replace view d08_documento_tvw as
+create or replace view d07_documento_tvw as
 select 
  id,
  tipo_documento_id,
@@ -6,13 +6,13 @@ select
  data_documento,
  firma_yn,
  categoria
- from d08_documento;
+ from d07_documento;
 
-create or replace trigger d08_documento_tvw_itrg 
-instead of insert on d08_documento_tvw 
+create or replace trigger d07_documento_tvw_itrg 
+instead of insert on d07_documento_tvw 
 for each row 
 begin 
-        d08_documento_api.insert_row (
+        d07_documento_api.insert_row (
             p_id                          => null,
             p_tipo_documento_id           => null,
             p_codice                      => null,
@@ -23,11 +23,11 @@ begin
 end; 
 /
 
-create or replace trigger d08_documento_tvw_utrg 
-instead of update on d08_documento_tvw 
+create or replace trigger d07_documento_tvw_utrg 
+instead of update on d07_documento_tvw 
 for each row 
 begin 
-        d08_documento_api.update_row (
+        d07_documento_api.update_row (
             p_id                          => null,
             p_tipo_documento_id           => null,
             p_codice                      => null,
@@ -38,11 +38,11 @@ begin
 end; 
 /
 
-create or replace trigger d08_documento_tvw_dtrg 
-instead of delete on d08_documento_tvw 
+create or replace trigger d07_documento_tvw_dtrg 
+instead of delete on d07_documento_tvw 
 for each row 
 begin 
-        d08_documento_api.delete_row (
+        d07_documento_api.delete_row (
         p_id                           => null
     );
 end; 
