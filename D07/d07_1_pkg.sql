@@ -1,13 +1,13 @@
-create or replace PACKAGE d08_pkg is  
+create or replace PACKAGE d07_pkg is  
 
     function apex_error_handling (  
         p_error in apex_error.t_error )  
         return apex_error.t_error_result;  
       
-end d08_pkg; 
+end d07_pkg; 
 /
 
-create or replace PACKAGE BODY d08_pkg as   
+create or replace PACKAGE BODY d07_pkg as   
     function apex_error_handling (  
         p_error in apex_error.t_error )  
         return apex_error.t_error_result  
@@ -60,7 +60,7 @@ create or replace PACKAGE BODY d08_pkg as
                 begin  
                     select message  
                       into l_result.message  
-                      from d08_error_lookup  
+                      from d07_error_lookup  
                      where constraint_name = l_constraint_name;  
                 exception when no_data_found then null; -- not every constraint has to be in our lookup table  
                 end;  
@@ -85,5 +85,5 @@ create or replace PACKAGE BODY d08_pkg as
         return l_result;  
     end apex_error_handling;  
         
-end d08_pkg;  
+end d07_pkg;  
 /
